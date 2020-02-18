@@ -7,6 +7,12 @@ const User = require('../../models/User');
 const router = express.Router();
 
 router.post('/register', (req, res) => {
+  const { errors, isValid } = validateRegisterInput(req.body);
+
+  if (!isValid) {
+    return res.status(400).json(errors);
+  }
+
   // Check to make sure nobody has already registered with a duplicate email
   User.findOne({ email: req.body.email })
     .then(user => {
@@ -47,9 +53,7 @@ router.post('/login', (req, res) => {
   User.findOne({email})
     .then(user => {
       if (!user) {
-        // Use the validations to send the error
-        errors.email = 'User not found';
-        return res.status(404).json(errors);
+        return res.status(404).json({email: 'This user does not exist'});
       }
 
       bcrypt.compare(password, user.password)
@@ -57,9 +61,7 @@ router.post('/login', (req, res) => {
           if (isMatch) {
             res.json({msg: 'Success'});
           } else {
-            // And here:
-            errors.password = 'Incorrect password'
-            return res.status(400).json(errors);
+            return res.status(400).json({password: 'Incorrect password'});
           }
         })
     })
