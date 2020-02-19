@@ -7,9 +7,9 @@ class MainPage extends React.Component {
   render() {
     return (
       <div>
-        <h1>A Twitter Clone</h1>
+        <br/>
         <footer>
-          Copyright &copy; 2019 Chirper
+          It doesn't suck
         </footer>
       </div>
     );
