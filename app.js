@@ -21,7 +21,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
 app.use("/api/users", users);
-app.use("/api/dailyLogs", logs);
+app.use("/api/logs", logs);
 
 const port = process.env.PORT || 5000;
 

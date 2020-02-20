@@ -1,4 +1,4 @@
-// src/util/tweet_api_util.js
+// src/util/log_api_util.js
 
 import axios from 'axios';
 
@@ -7,5 +7,6 @@ export const getUserLogs = id => {
 };
 
 export const writeLog = data => {
+  console.log(data)
   return axios.post('/api/logs/', data)
 }

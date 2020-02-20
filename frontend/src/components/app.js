@@ -9,7 +9,7 @@ import MainPage from './main/main_page';
 import LoginFormContainer from './session/login_form_container';
 import SignupFormContainer from './session/signup_form_container';
 import LogsContainer from './logs/logs_container';
-import LogComposeContainer from './logs/log_compose_container';
+import TodayContainer from './logs/today_container';
 
 const App = () => (
   <div>
@@ -21,7 +21,7 @@ const App = () => (
 
         {/* <ProtectedRoute exact path="/today" component={TodayContainer} /> */}
         <ProtectedRoute exact path="/logs" component={LogsContainer} />
-        <ProtectedRoute exact path="/new_log" component={LogComposeContainer} />
+        <ProtectedRoute exact path="/today" component={TodayContainer} />
     </Switch>
   </div>
 );

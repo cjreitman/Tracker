@@ -23,7 +23,6 @@ class NavBar extends React.Component {
             <div>
                 <Link to={'/logs'}>Log History</Link>
                 <Link to={'/today'}>Today</Link>
-                <Link to={'/new_log'}>New Log</Link>
                 <button onClick={this.logoutUser}>Logout</button>
             </div>
         );

@@ -2,7 +2,7 @@
 
 import { connect } from 'react-redux';
 import { composeLog } from '../../actions/log_actions';
-import LogCompose from './log_compose';
+import Today from './today';
 
 const mapStateToProps = (state) => {
   return {
@@ -17,4 +17,4 @@ const mapDispatchToProps = dispatch => {
   };
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(LogCompose);
+export default connect(mapStateToProps, mapDispatchToProps)(Today);

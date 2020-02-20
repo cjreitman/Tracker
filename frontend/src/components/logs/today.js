@@ -1,9 +1,9 @@
-// src/components/tweets/tweet_compose.js
+// src/components/logs/today.js
 
 import React from 'react';
 import LogBox from './log_box';
 
-class LogCompose extends React.Component {
+class Today extends React.Component {
   constructor(props) {
       super(props);
 
@@ -31,7 +31,7 @@ class LogCompose extends React.Component {
 
   update() {
     return e => this.setState({
-      text: e.currentTarget.value
+      name: e.currentTarget.value
     });
   }
 
@@ -55,4 +55,4 @@ class LogCompose extends React.Component {
   }
 }
 
-export default LogCompose;
+export default Today;
