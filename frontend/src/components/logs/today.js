@@ -2,6 +2,7 @@
 
 import React from 'react';
 import LogBox from './log_box';
+import Search from '../search/search';
 
 class Today extends React.Component {
   constructor(props) {
@@ -39,18 +40,9 @@ class Today extends React.Component {
   render() {
     return (
         <div>
-            <form onSubmit={this.handleSubmit}>
-                <div>
-                    <input type="textarea"
-                        value={this.state.name}
-                        onChange={this.update()}
-                        placeholder="Search the food"
-                    />
-                    <input type="submit" value="Submit" />
-                </div>
-            </form>
-            <br />
-            <LogBox name={this.state.newLog} />
+          <Search/>
+          <br />
+          <LogBox name={this.state.newLog} />
         </div>
     )
   }

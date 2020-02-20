@@ -7,6 +7,5 @@ export const getUserLogs = id => {
 };
 
 export const writeLog = data => {
-  console.log(data)
   return axios.post('/api/logs/', data)
 }
