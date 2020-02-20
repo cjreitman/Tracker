@@ -16,7 +16,8 @@ class Today extends React.Component {
   } 
 
   componentWillReceiveProps(nextProps) {
-      this.setState({newLog: nextProps.newLog.name});
+    const name = (nextProps.newLog && nextProps.newLog.name) ? nextProps.newLog.name : '';
+      this.setState({newLog: name});
   }
 
   handleSubmit(e) {
